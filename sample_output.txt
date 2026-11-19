@@ -1,0 +1,694 @@
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012303
+Roll No.: R2142250103
+Name: Aarav Sharma
+Phone No. (10 digits): 98765
+  Invalid phone number. It must contain exactly 10 digits.
+Phone No. (10 digits): 9876543210
+Email ID: aarav.sharma@example.com
+Year (1-4): 5
+  Invalid input. Please enter a whole number from 1 to 4.
+Year (1-4): 1
+Semester (1 or 2): 2
+Enter the SGPA for all 8 semesters:
+  SGPA of semester 1 (0-10, or -1 if not available): 9.2
+  SGPA of semester 2 (0-10, or -1 if not available): 8.9
+  SGPA of semester 3 (0-10, or -1 if not available): -1
+  SGPA of semester 4 (0-10, or -1 if not available): -1
+  SGPA of semester 5 (0-10, or -1 if not available): -1
+  SGPA of semester 6 (0-10, or -1 if not available): -1
+  SGPA of semester 7 (0-10, or -1 if not available): -1
+  SGPA of semester 8 (0-10, or -1 if not available): -1
+Student added successfully. Total records: 1
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012305
+Roll No.: R2142250105
+Name: Meera Nair
+Phone No. (10 digits): 9844455566
+Email ID: meera.nair@example.com
+Year (1-4): 3
+Semester (5 or 6): 5
+Enter the SGPA for all 8 semesters:
+  SGPA of semester 1 (0-10, or -1 if not available): 5.2
+  SGPA of semester 2 (0-10, or -1 if not available): 5.5
+  SGPA of semester 3 (0-10, or -1 if not available): 4.9
+  SGPA of semester 4 (0-10, or -1 if not available): 5.1
+  SGPA of semester 5 (0-10, or -1 if not available): 4.8
+  SGPA of semester 6 (0-10, or -1 if not available): -1
+  SGPA of semester 7 (0-10, or -1 if not available): -1
+  SGPA of semester 8 (0-10, or -1 if not available): -1
+Student added successfully. Total records: 2
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012302
+Roll No.: R2142250102
+Name: Kabir Singh
+Phone No. (10 digits): 9822233344
+Email ID: kabir.singh@example.com
+Year (1-4): 2
+Semester (3 or 4): 3
+Enter the SGPA for all 8 semesters:
+  SGPA of semester 1 (0-10, or -1 if not available): 6.4
+  SGPA of semester 2 (0-10, or -1 if not available): 5.9
+  SGPA of semester 3 (0-10, or -1 if not available): 6.2
+  SGPA of semester 4 (0-10, or -1 if not available): -1
+  SGPA of semester 5 (0-10, or -1 if not available): -1
+  SGPA of semester 6 (0-10, or -1 if not available): -1
+  SGPA of semester 7 (0-10, or -1 if not available): -1
+  SGPA of semester 8 (0-10, or -1 if not available): -1
+Student added successfully. Total records: 3
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012304
+Roll No.: R2142250104
+Name: Diya Verma
+Phone No. (10 digits): 9833344455
+Email ID: diya.verma@example.com
+Year (1-4): 2
+Semester (3 or 4): 4
+Enter the SGPA for all 8 semesters:
+  SGPA of semester 1 (0-10, or -1 if not available): 8.1
+  SGPA of semester 2 (0-10, or -1 if not available): 7.6
+  SGPA of semester 3 (0-10, or -1 if not available): 7.9
+  SGPA of semester 4 (0-10, or -1 if not available): 7.4
+  SGPA of semester 5 (0-10, or -1 if not available): -1
+  SGPA of semester 6 (0-10, or -1 if not available): -1
+  SGPA of semester 7 (0-10, or -1 if not available): -1
+  SGPA of semester 8 (0-10, or -1 if not available): -1
+Student added successfully. Total records: 4
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012301
+Roll No.: R2142250101
+Name: Rohan Gupta
+Phone No. (10 digits): 9811122233
+Email ID: rohan.gupta@example.com
+Year (1-4): 4
+Semester (7 or 8): 8
+Enter the SGPA for all 8 semesters:
+  SGPA of semester 1 (0-10, or -1 if not available): 8.8
+  SGPA of semester 2 (0-10, or -1 if not available): 9.1
+  SGPA of semester 3 (0-10, or -1 if not available): 8.6
+  SGPA of semester 4 (0-10, or -1 if not available): 9.0
+  SGPA of semester 5 (0-10, or -1 if not available): 8.9
+  SGPA of semester 6 (0-10, or -1 if not available): 9.2
+  SGPA of semester 7 (0-10, or -1 if not available): 8.7
+  SGPA of semester 8 (0-10, or -1 if not available): 9.3
+Student added successfully. Total records: 5
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 1
+
+--- Add New Student ---
+SAP ID (8 or 9 digits): 500012303
+A student with SAP ID 500012303 already exists. Record not added.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 2
+
+--- All Student Records (5 records) ---
+
+Record 1
+  SAP ID   : 500012303
+  Roll No. : R2142250103
+  Name     : Aarav Sharma
+  Phone    : 9876543210
+  Email    : aarav.sharma@example.com
+  Year     : 1     Semester: 2
+  SGPA     : S1=9.20 S2=8.90 S3=-- S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 9.05
+
+Record 2
+  SAP ID   : 500012305
+  Roll No. : R2142250105
+  Name     : Meera Nair
+  Phone    : 9844455566
+  Email    : meera.nair@example.com
+  Year     : 3     Semester: 5
+  SGPA     : S1=5.20 S2=5.50 S3=4.90 S4=5.10 S5=4.80 S6=-- S7=-- S8=--
+  CGPA     : 5.10
+
+Record 3
+  SAP ID   : 500012302
+  Roll No. : R2142250102
+  Name     : Kabir Singh
+  Phone    : 9822233344
+  Email    : kabir.singh@example.com
+  Year     : 2     Semester: 3
+  SGPA     : S1=6.40 S2=5.90 S3=6.20 S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 6.17
+
+Record 4
+  SAP ID   : 500012304
+  Roll No. : R2142250104
+  Name     : Diya Verma
+  Phone    : 9833344455
+  Email    : diya.verma@example.com
+  Year     : 2     Semester: 4
+  SGPA     : S1=8.10 S2=7.60 S3=7.90 S4=7.40 S5=-- S6=-- S7=-- S8=--
+  CGPA     : 7.75
+
+Record 5
+  SAP ID   : 500012301
+  Roll No. : R2142250101
+  Name     : Rohan Gupta
+  Phone    : 9811122233
+  Email    : rohan.gupta@example.com
+  Year     : 4     Semester: 8
+  SGPA     : S1=8.80 S2=9.10 S3=8.60 S4=9.00 S5=8.90 S6=9.20 S7=8.70 S8=9.30
+  CGPA     : 8.95
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 3
+
+--- Search Student ---
+Enter SAP ID to search: 500012302
+Student found:
+  SAP ID   : 500012302
+  Roll No. : R2142250102
+  Name     : Kabir Singh
+  Phone    : 9822233344
+  Email    : kabir.singh@example.com
+  Year     : 2     Semester: 3
+  SGPA     : S1=6.40 S2=5.90 S3=6.20 S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 6.17
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 3
+
+--- Search Student ---
+Enter SAP ID to search: 500012999
+No student found with SAP ID 500012999.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 6
+
+--- CGPA of Each Student ---
+  SAP ID      Name                   CGPA
+  500012303   Aarav Sharma           9.05
+  500012305   Meera Nair             5.10
+  500012302   Kabir Singh            6.17
+  500012304   Diya Verma             7.75
+  500012301   Rohan Gupta            8.95
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 7
+
+--- Average CGPA of Each Year ---
+  Year 1 : 1 student(s), average CGPA = 9.05
+  Year 2 : 2 student(s), average CGPA = 6.96
+  Year 3 : 1 student(s), average CGPA = 5.10
+  Year 4 : 1 student(s), average CGPA = 8.95
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 8
+
+--- Records in Increasing Order of SAP ID (5 records) ---
+
+Record 1
+  SAP ID   : 500012301
+  Roll No. : R2142250101
+  Name     : Rohan Gupta
+  Phone    : 9811122233
+  Email    : rohan.gupta@example.com
+  Year     : 4     Semester: 8
+  SGPA     : S1=8.80 S2=9.10 S3=8.60 S4=9.00 S5=8.90 S6=9.20 S7=8.70 S8=9.30
+  CGPA     : 8.95
+
+Record 2
+  SAP ID   : 500012302
+  Roll No. : R2142250102
+  Name     : Kabir Singh
+  Phone    : 9822233344
+  Email    : kabir.singh@example.com
+  Year     : 2     Semester: 3
+  SGPA     : S1=6.40 S2=5.90 S3=6.20 S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 6.17
+
+Record 3
+  SAP ID   : 500012303
+  Roll No. : R2142250103
+  Name     : Aarav Sharma
+  Phone    : 9876543210
+  Email    : aarav.sharma@example.com
+  Year     : 1     Semester: 2
+  SGPA     : S1=9.20 S2=8.90 S3=-- S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 9.05
+
+Record 4
+  SAP ID   : 500012304
+  Roll No. : R2142250104
+  Name     : Diya Verma
+  Phone    : 9833344455
+  Email    : diya.verma@example.com
+  Year     : 2     Semester: 4
+  SGPA     : S1=8.10 S2=7.60 S3=7.90 S4=7.40 S5=-- S6=-- S7=-- S8=--
+  CGPA     : 7.75
+
+Record 5
+  SAP ID   : 500012305
+  Roll No. : R2142250105
+  Name     : Meera Nair
+  Phone    : 9844455566
+  Email    : meera.nair@example.com
+  Year     : 3     Semester: 5
+  SGPA     : S1=5.20 S2=5.50 S3=4.90 S4=5.10 S5=4.80 S6=-- S7=-- S8=--
+  CGPA     : 5.10
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 9
+
+--- Records in Increasing Order of Name (5 records) ---
+
+Record 1
+  SAP ID   : 500012303
+  Roll No. : R2142250103
+  Name     : Aarav Sharma
+  Phone    : 9876543210
+  Email    : aarav.sharma@example.com
+  Year     : 1     Semester: 2
+  SGPA     : S1=9.20 S2=8.90 S3=-- S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 9.05
+
+Record 2
+  SAP ID   : 500012304
+  Roll No. : R2142250104
+  Name     : Diya Verma
+  Phone    : 9833344455
+  Email    : diya.verma@example.com
+  Year     : 2     Semester: 4
+  SGPA     : S1=8.10 S2=7.60 S3=7.90 S4=7.40 S5=-- S6=-- S7=-- S8=--
+  CGPA     : 7.75
+
+Record 3
+  SAP ID   : 500012302
+  Roll No. : R2142250102
+  Name     : Kabir Singh
+  Phone    : 9822233344
+  Email    : kabir.singh@example.com
+  Year     : 2     Semester: 3
+  SGPA     : S1=6.40 S2=5.90 S3=6.20 S4=-- S5=-- S6=-- S7=-- S8=--
+  CGPA     : 6.17
+
+Record 4
+  SAP ID   : 500012305
+  Roll No. : R2142250105
+  Name     : Meera Nair
+  Phone    : 9844455566
+  Email    : meera.nair@example.com
+  Year     : 3     Semester: 5
+  SGPA     : S1=5.20 S2=5.50 S3=4.90 S4=5.10 S5=4.80 S6=-- S7=-- S8=--
+  CGPA     : 5.10
+
+Record 5
+  SAP ID   : 500012301
+  Roll No. : R2142250101
+  Name     : Rohan Gupta
+  Phone    : 9811122233
+  Email    : rohan.gupta@example.com
+  Year     : 4     Semester: 8
+  SGPA     : S1=8.80 S2=9.10 S3=8.60 S4=9.00 S5=8.90 S6=9.20 S7=8.70 S8=9.30
+  CGPA     : 8.95
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 10
+
+--- AI-Assisted Academic Advisor ---
+Enter SAP ID of the student: 500012303
+Student  : Aarav Sharma (SAP ID 500012303)
+CGPA     : 9.05
+Category : Excellent Performance
+Advice   : Excellent performance - maintain your current study pattern and try advanced projects or research.
+Trend    : Latest SGPA (8.90) is lower than the one before (9.20) - find out what went wrong.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 10
+
+--- AI-Assisted Academic Advisor ---
+Enter SAP ID of the student: 500012304
+Student  : Diya Verma (SAP ID 500012304)
+CGPA     : 7.75
+Category : Good Performance
+Advice   : Good performance - keep revising regularly and work on your weaker subjects to move higher.
+Trend    : Latest SGPA (7.40) is lower than the one before (7.90) - find out what went wrong.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 10
+
+--- AI-Assisted Academic Advisor ---
+Enter SAP ID of the student: 500012302
+Student  : Kabir Singh (SAP ID 500012302)
+CGPA     : 6.17
+Category : Needs Improvement
+Advice   : Needs improvement - focus more on subjects with lower SGPA and follow a weekly study plan.
+Hint     : Weakest result so far is semester 2 (SGPA 5.90) - revise its subjects first.
+Trend    : Latest SGPA (6.20) is higher than the one before (5.90) - good progress.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 10
+
+--- AI-Assisted Academic Advisor ---
+Enter SAP ID of the student: 500012305
+Student  : Meera Nair (SAP ID 500012305)
+CGPA     : 5.10
+Category : Requires Immediate Attention
+Advice   : Requires immediate attention - meet your faculty advisor, attend extra classes and start remedial study now.
+Hint     : Weakest result so far is semester 5 (SGPA 4.80) - revise its subjects first.
+Trend    : Latest SGPA (4.80) is lower than the one before (5.10) - find out what went wrong.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 10
+
+--- AI-Assisted Academic Advisor ---
+Enter SAP ID of the student: 500012301
+Student  : Rohan Gupta (SAP ID 500012301)
+CGPA     : 8.95
+Category : Excellent Performance
+Advice   : Excellent performance - maintain your current study pattern and try advanced projects or research.
+Trend    : Latest SGPA (9.30) is higher than the one before (8.70) - good progress.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 4
+
+--- Delete Student ---
+Enter SAP ID to delete: 500012301
+You are about to delete:
+  SAP ID   : 500012301
+  Roll No. : R2142250101
+  Name     : Rohan Gupta
+  Phone    : 9811122233
+  Email    : rohan.gupta@example.com
+  Year     : 4     Semester: 8
+  SGPA     : S1=8.80 S2=9.10 S3=8.60 S4=9.00 S5=8.90 S6=9.20 S7=8.70 S8=9.30
+  CGPA     : 8.95
+Are you sure? (y/n): n
+Delete cancelled.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 4
+
+--- Delete Student ---
+Enter SAP ID to delete: 500012301
+You are about to delete:
+  SAP ID   : 500012301
+  Roll No. : R2142250101
+  Name     : Rohan Gupta
+  Phone    : 9811122233
+  Email    : rohan.gupta@example.com
+  Year     : 4     Semester: 8
+  SGPA     : S1=8.80 S2=9.10 S3=8.60 S4=9.00 S5=8.90 S6=9.20 S7=8.70 S8=9.30
+  CGPA     : 8.95
+Are you sure? (y/n): y
+Record deleted. Total records: 4
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 3
+
+--- Search Student ---
+Enter SAP ID to search: 500012301
+No student found with SAP ID 500012301.
+
+=========== STUDENT RECORD & RESULT MANAGEMENT ===========
+  1. Add student
+  2. Display all students
+  3. Search student by SAP ID
+  4. Delete student
+  5. Load 5 sample students (for testing)
+  6. Calculate CGPA of each student
+  7. Average CGPA of each year
+  8. Display students sorted by SAP ID
+  9. Display students sorted by Name
+ 10. Academic advisor (CGPA-based advice)
+  0. Exit
+==========================================================
+Enter your choice: 0
+Thank you. Goodbye!

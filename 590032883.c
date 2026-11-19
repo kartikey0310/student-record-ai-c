@@ -5,13 +5,13 @@
  *  University : University of Petroleum and Energy Studies (UPES)
  *  Course     : Programming in C (PRC1001)
  *  Student    : KARTIKEY
- *  SAP ID     : 590032883 
+ *  SAP ID     : 590032883
  *
  *  A console, menu-driven program that keeps student records in an
  *  array of structures, calculates CGPA, sorts and searches records,
  *  and gives simple academic advice based on CGPA (if-else logic).
  *
- *  Build : gcc -Wall -Wextra -o student_record 590032883 .c
+ *  Build : gcc -Wall -Wextra -o student_record 590032883.c
  *  Run   : ./student_record            (add --echo to echo typed input)
  * ====================================================================
  */
@@ -499,6 +499,98 @@ static void display_sorted_by_name(void)
     display_list(copy, student_count, "Records in Increasing Order of Name");
 }
 
+/* ------------------------------------------------------------------ */
+/*  Part B: AI-Assisted Academic Advisor                               */
+/*  The four categories and the CGPA limits were first suggested by an */
+/*  AI tool and then checked/adjusted by the student (see              */
+/*  AI_USAGE_LOG.md). The recommendation itself is produced by the     */
+/*  if-else statements below - no AI is called while the program runs. */
+/* ------------------------------------------------------------------ */
+static void academic_advisor(void)
+{
+    long sap_id;
+    int index;
+    int i;
+    int weakest = -1;
+    int last = -1;
+    int prev = -1;
+    double cgpa;
+    const Student *s;
+    const char *category;
+    const char *advice;
+
+    printf("\n--- AI-Assisted Academic Advisor ---\n");
+    sap_id = read_long("Enter SAP ID of the student: ", 10000000L, 999999999L);
+
+    index = find_index_by_sap(sap_id);
+    if (index == -1) {
+        printf("No student found with SAP ID %ld.\n", sap_id);
+        return;
+    }
+
+    s = &students[index];
+    cgpa = calculate_cgpa(s);
+    if (cgpa < 0.0) {
+        printf("%s has no SGPA available, so no advice can be given yet.\n", s->name);
+        return;
+    }
+
+    /* Main decision: choose the category from the CGPA */
+    if (cgpa >= 8.5) {
+        category = "Excellent Performance";
+        advice = "Excellent performance - maintain your current study pattern and try advanced projects or research.";
+    } else if (cgpa >= 7.0) {
+        category = "Good Performance";
+        advice = "Good performance - keep revising regularly and work on your weaker subjects to move higher.";
+    } else if (cgpa >= 5.5) {
+        category = "Needs Improvement";
+        advice = "Needs improvement - focus more on subjects with lower SGPA and follow a weekly study plan.";
+    } else {
+        category = "Requires Immediate Attention";
+        advice = "Requires immediate attention - meet your faculty advisor, attend extra classes and start remedial study now.";
+    }
+
+    printf("Student  : %s (SAP ID %ld)\n", s->name, s->sap_id);
+    printf("CGPA     : %.2f\n", cgpa);
+    printf("Category : %s\n", category);
+    printf("Advice   : %s\n", advice);
+
+    /* Extra hints from the individual SGPA values */
+    for (i = 0; i < NUM_SEMESTERS; i++) {
+        if (s->sgpa[i] >= 0.0) {
+            if (weakest == -1 || s->sgpa[i] < s->sgpa[weakest]) {
+                weakest = i;
+            }
+        }
+    }
+    if (cgpa < 7.0) {
+        printf("Hint     : Weakest result so far is semester %d (SGPA %.2f) - revise its subjects first.\n",
+               weakest + 1, s->sgpa[weakest]);
+    }
+
+    /* Find the two most recent available SGPA values */
+    for (i = NUM_SEMESTERS - 1; i >= 0; i--) {
+        if (s->sgpa[i] >= 0.0) {
+            if (last == -1) {
+                last = i;
+            } else if (prev == -1) {
+                prev = i;
+            }
+        }
+    }
+    if (prev != -1) {
+        if (s->sgpa[last] < s->sgpa[prev]) {
+            printf("Trend    : Latest SGPA (%.2f) is lower than the one before (%.2f) - find out what went wrong.\n",
+                   s->sgpa[last], s->sgpa[prev]);
+        } else if (s->sgpa[last] > s->sgpa[prev]) {
+            printf("Trend    : Latest SGPA (%.2f) is higher than the one before (%.2f) - good progress.\n",
+                   s->sgpa[last], s->sgpa[prev]);
+        } else {
+            printf("Trend    : Latest SGPA is the same as the one before (%.2f) - steady.\n",
+                   s->sgpa[last]);
+        }
+    }
+}
 
 /* ------------------------------------------------------------------ */
 /*  Menu and main                                                      */
@@ -516,6 +608,7 @@ static void print_menu(void)
     printf("  7. Average CGPA of each year\n");
     printf("  8. Display students sorted by SAP ID\n");
     printf("  9. Display students sorted by Name\n");
+    printf(" 10. Academic advisor (CGPA-based advice)\n");
     printf("  0. Exit\n");
     printf("==========================================================\n");
 }
@@ -542,6 +635,7 @@ int main(int argc, char *argv[])
             case 7:  show_yearwise_average();  break;
             case 8:  display_sorted_by_sap();  break;
             case 9:  display_sorted_by_name(); break;
+            case 10: academic_advisor();       break;
             case 0:  printf("Thank you. Goodbye!\n"); break;
             default: printf("That option is not available yet.\n"); break;
         }
