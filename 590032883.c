@@ -4,14 +4,14 @@
  * ====================================================================
  *  University : University of Petroleum and Energy Studies (UPES)
  *  Course     : Programming in C (PRC1001)
- *  Student    : KARTIKEY 
+ *  Student    : KARTIKEY
  *  SAP ID     : 590032883 
  *
  *  A console, menu-driven program that keeps student records in an
  *  array of structures, calculates CGPA, sorts and searches records,
  *  and gives simple academic advice based on CGPA (if-else logic).
  *
- *  Build : gcc -Wall -Wextra -o student_record 5900032883.c
+ *  Build : gcc -Wall -Wextra -o student_record 590032883 .c
  *  Run   : ./student_record            (add --echo to echo typed input)
  * ====================================================================
  */
@@ -169,6 +169,26 @@ static int find_index_by_sap(long sap_id)
     return -1;
 }
 
+/* CGPA = average of the SGPA values that are available.
+   Returns NOT_AVAILABLE (-1) if the student has no SGPA yet. */
+static double calculate_cgpa(const Student *s)
+{
+    double sum = 0.0;
+    int count = 0;
+    int i;
+
+    for (i = 0; i < NUM_SEMESTERS; i++) {
+        if (s->sgpa[i] >= 0.0) {
+            sum += s->sgpa[i];
+            count++;
+        }
+    }
+
+    if (count == 0) {
+        return NOT_AVAILABLE;
+    }
+    return sum / count;
+}
 
 /* Prints one complete record. */
 static void print_student(const Student *s)
@@ -191,6 +211,14 @@ static void print_student(const Student *s)
         }
     }
     printf("\n");
+    {
+        double cgpa = calculate_cgpa(s);
+        if (cgpa >= 0.0) {
+            printf("  CGPA     : %.2f\n", cgpa);
+        } else {
+            printf("  CGPA     : not available\n");
+        }
+    }
 }
 
 /* Prints a list of records under a heading (used by all display options). */
@@ -350,6 +378,126 @@ static void load_sample_data(void)
     printf("\n%d sample student(s) loaded. Total records: %d\n", added, student_count);
 }
 
+/* Shows the CGPA of every student in a small table. */
+static void show_cgpa_of_all(void)
+{
+    int i;
+    double cgpa;
+
+    printf("\n--- CGPA of Each Student ---\n");
+    if (student_count == 0) {
+        printf("  No records to show.\n");
+        return;
+    }
+
+    printf("  %-11s %-22s %s\n", "SAP ID", "Name", "CGPA");
+    for (i = 0; i < student_count; i++) {
+        cgpa = calculate_cgpa(&students[i]);
+        if (cgpa >= 0.0) {
+            printf("  %-11ld %-22s %.2f\n", students[i].sap_id, students[i].name, cgpa);
+        } else {
+            printf("  %-11ld %-22s not available\n", students[i].sap_id, students[i].name);
+        }
+    }
+}
+
+/* Average of the students' CGPA values, separately for each year. */
+static void show_yearwise_average(void)
+{
+    int year;
+    int i;
+    int count;
+    double sum;
+    double cgpa;
+
+    printf("\n--- Average CGPA of Each Year ---\n");
+    for (year = 1; year <= 4; year++) {
+        sum = 0.0;
+        count = 0;
+        for (i = 0; i < student_count; i++) {
+            if (students[i].year == year) {
+                cgpa = calculate_cgpa(&students[i]);
+                if (cgpa >= 0.0) {
+                    sum += cgpa;
+                    count++;
+                }
+            }
+        }
+        if (count > 0) {
+            printf("  Year %d : %d student(s), average CGPA = %.2f\n", year, count, sum / count);
+        } else {
+            printf("  Year %d : no students with a CGPA\n", year);
+        }
+    }
+}
+
+/* Compares two names ignoring upper/lower case (like strcmp). */
+static int compare_names(const char *a, const char *b)
+{
+    while (*a != '\0' && *b != '\0') {
+        int ca = tolower((unsigned char)*a);
+        int cb = tolower((unsigned char)*b);
+        if (ca != cb) {
+            return ca - cb;
+        }
+        a++;
+        b++;
+    }
+    return tolower((unsigned char)*a) - tolower((unsigned char)*b);
+}
+
+/* Bubble sort by SAP ID, smallest first. */
+static void sort_by_sap(Student list[], int n)
+{
+    int i, j;
+    Student temp;
+
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+            if (list[j].sap_id > list[j + 1].sap_id) {
+                temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
+        }
+    }
+}
+
+/* Bubble sort by name, A to Z. */
+static void sort_by_name(Student list[], int n)
+{
+    int i, j;
+    Student temp;
+
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+            if (compare_names(list[j].name, list[j + 1].name) > 0) {
+                temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
+        }
+    }
+}
+
+/* Sorting works on a copy, so the original order of records is not changed. */
+static void display_sorted_by_sap(void)
+{
+    Student copy[MAX_STUDENTS];
+
+    memcpy(copy, students, sizeof(Student) * student_count);
+    sort_by_sap(copy, student_count);
+    display_list(copy, student_count, "Records in Increasing Order of SAP ID");
+}
+
+static void display_sorted_by_name(void)
+{
+    Student copy[MAX_STUDENTS];
+
+    memcpy(copy, students, sizeof(Student) * student_count);
+    sort_by_name(copy, student_count);
+    display_list(copy, student_count, "Records in Increasing Order of Name");
+}
 
 
 /* ------------------------------------------------------------------ */
@@ -364,6 +512,10 @@ static void print_menu(void)
     printf("  3. Search student by SAP ID\n");
     printf("  4. Delete student\n");
     printf("  5. Load 5 sample students (for testing)\n");
+    printf("  6. Calculate CGPA of each student\n");
+    printf("  7. Average CGPA of each year\n");
+    printf("  8. Display students sorted by SAP ID\n");
+    printf("  9. Display students sorted by Name\n");
     printf("  0. Exit\n");
     printf("==========================================================\n");
 }
@@ -386,6 +538,10 @@ int main(int argc, char *argv[])
             case 3:  search_student();         break;
             case 4:  delete_student();         break;
             case 5:  load_sample_data();       break;
+            case 6:  show_cgpa_of_all();       break;
+            case 7:  show_yearwise_average();  break;
+            case 8:  display_sorted_by_sap();  break;
+            case 9:  display_sorted_by_name(); break;
             case 0:  printf("Thank you. Goodbye!\n"); break;
             default: printf("That option is not available yet.\n"); break;
         }
