@@ -5,13 +5,13 @@
  *  University : University of Petroleum and Energy Studies (UPES)
  *  Course     : Programming in C (PRC1001)
  *  Student    : KARTIKEY 
- *  SAP ID     : 590032883
+ *  SAP ID     : 590032883 
  *
  *  A console, menu-driven program that keeps student records in an
  *  array of structures, calculates CGPA, sorts and searches records,
  *  and gives simple academic advice based on CGPA (if-else logic).
  *
- *  Build : gcc -Wall -Wextra -o student_record 590032883.c
+ *  Build : gcc -Wall -Wextra -o student_record 5900032883.c
  *  Run   : ./student_record            (add --echo to echo typed input)
  * ====================================================================
  */
@@ -272,6 +272,83 @@ static void display_all_students(void)
     display_list(students, student_count, "All Student Records");
 }
 
+static void search_student(void)
+{
+    long sap_id;
+    int index;
+
+    printf("\n--- Search Student ---\n");
+    sap_id = read_long("Enter SAP ID to search: ", 10000000L, 999999999L);
+
+    index = find_index_by_sap(sap_id);
+    if (index == -1) {
+        printf("No student found with SAP ID %ld.\n", sap_id);
+    } else {
+        printf("Student found:\n");
+        print_student(&students[index]);
+    }
+}
+
+static void delete_student(void)
+{
+    long sap_id;
+    int index;
+    int i;
+    char answer[LINE_SIZE];
+
+    printf("\n--- Delete Student ---\n");
+    sap_id = read_long("Enter SAP ID to delete: ", 10000000L, 999999999L);
+
+    index = find_index_by_sap(sap_id);
+    if (index == -1) {
+        printf("No student found with SAP ID %ld.\n", sap_id);
+        return;
+    }
+
+    printf("You are about to delete:\n");
+    print_student(&students[index]);
+    read_line("Are you sure? (y/n): ", answer, sizeof(answer));
+
+    if (answer[0] != 'y' && answer[0] != 'Y') {
+        printf("Delete cancelled.\n");
+        return;
+    }
+
+    /* Shift every later record one place to the left */
+    for (i = index; i < student_count - 1; i++) {
+        students[i] = students[i + 1];
+    }
+    student_count--;
+    printf("Record deleted. Total records: %d\n", student_count);
+}
+
+/* Adds 5 ready-made students so the program can be tested quickly. */
+static void load_sample_data(void)
+{
+    static const Student samples[5] = {
+        { 500012301L, "R2142250101", "Rohan Gupta",  "9811122233", "rohan.gupta@example.com",
+          4, 8, { 8.8, 9.1, 8.6, 9.0, 8.9, 9.2, 8.7, 9.3 } },
+        { 500012302L, "R2142250102", "Kabir Singh",  "9822233344", "kabir.singh@example.com",
+          2, 3, { 6.4, 5.9, 6.2, -1.0, -1.0, -1.0, -1.0, -1.0 } },
+        { 500012303L, "R2142250103", "Aarav Sharma", "9876543210", "aarav.sharma@example.com",
+          1, 2, { 9.2, 8.9, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0 } },
+        { 500012304L, "R2142250104", "Diya Verma",   "9833344455", "diya.verma@example.com",
+          2, 4, { 8.1, 7.6, 7.9, 7.4, -1.0, -1.0, -1.0, -1.0 } },
+        { 500012305L, "R2142250105", "Meera Nair",   "9844455566", "meera.nair@example.com",
+          3, 5, { 5.2, 5.5, 4.9, 5.1, 4.8, -1.0, -1.0, -1.0 } }
+    };
+    int i;
+    int added = 0;
+
+    for (i = 0; i < 5; i++) {
+        if (student_count < MAX_STUDENTS && find_index_by_sap(samples[i].sap_id) == -1) {
+            students[student_count] = samples[i];
+            student_count++;
+            added++;
+        }
+    }
+    printf("\n%d sample student(s) loaded. Total records: %d\n", added, student_count);
+}
 
 
 
@@ -284,6 +361,9 @@ static void print_menu(void)
     printf("\n=========== STUDENT RECORD & RESULT MANAGEMENT ===========\n");
     printf("  1. Add student\n");
     printf("  2. Display all students\n");
+    printf("  3. Search student by SAP ID\n");
+    printf("  4. Delete student\n");
+    printf("  5. Load 5 sample students (for testing)\n");
     printf("  0. Exit\n");
     printf("==========================================================\n");
 }
@@ -303,6 +383,9 @@ int main(int argc, char *argv[])
         switch (choice) {
             case 1:  add_student();            break;
             case 2:  display_all_students();   break;
+            case 3:  search_student();         break;
+            case 4:  delete_student();         break;
+            case 5:  load_sample_data();       break;
             case 0:  printf("Thank you. Goodbye!\n"); break;
             default: printf("That option is not available yet.\n"); break;
         }
