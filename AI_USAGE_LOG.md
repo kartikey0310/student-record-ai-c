@@ -10,7 +10,6 @@ This log records every use of an AI tool in this project: which tool, what was a
 | AI Tool | Prompt / Question Asked | How I Used / Verified the Response |
 | --- | --- | --- |
 | Claude (Anthropic) | I uploaded the project assignment and asked: "Can you do this project for me and tell me how to do it, how to upload to GitHub, and everything that is required?" | Received a first version of the program (struct array, menu, add/search/delete/display, CGPA, year-wise average, bubble sort by SAP ID and name, advisor), README, tests and GitHub steps. I followed the steps to create the repository, the commits and the issue, and checked the CGPA values by hand (see below). |
-| Claude (Anthropic) | WRITE YOUR SECOND QUESTION HERE | WRITE WHAT YOU KEPT OR CHANGED HERE |
 
 ## Verification checks (CGPA and advisor)
 
@@ -23,6 +22,6 @@ This log records every use of an AI tool in this project: which tool, what was a
 
 ## What I learned from using AI in this project
 
-- Writing a clear prompt: WRITE 1 SENTENCE IN YOUR OWN WORDS
-- Verifying instead of copying: WRITE 1 SENTENCE IN YOUR OWN WORDS
+- Writing a clear prompt: I learned that a clear prompt gives the full task and the requirements, so the AI can give a complete and useful answer.
+- Verifying instead of copying: I learned not to copy the output blindly, so I calculated some CGPA values by hand and compared them with the program output.
 - Turning an idea into C code: the advice categories became one if / else if / else chain in academic_advisor(), with the CGPA limits as the conditions.
